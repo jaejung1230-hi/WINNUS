@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:transitionName="img_shop"
+        android:id="@+id/img_background"
+        android:scaleType="fitXY"
+        android:src="@drawable/temp_shop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:src="#C1000000"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingHorizontal="@dimen/row_left_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+        <TextView
+            android:id="@+id/tv_shop_intro_kind"
+            android:textSize="@dimen/plain_text"
+            android:textColor="@color/gray"
+            android:text="라구식당"
+            app:layout_constraintTop_toBottomOf="@+id/guideline6"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_shop_intro_name"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="라구식당"
+            app:layout_constraintTop_toBottomOf="@+id/tv_shop_intro_kind"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7" />
+
+        <TextView
+            android:id="@+id/tv_shop_intro_location"
+            android:textSize="@dimen/plain_text"
+            android:textColor="@color/gray"
+            android:text="라구식당"
+            app:layout_constraintTop_toBottomOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/tv_shop_intro_tel"
+            android:textSize="@dimen/plain_text"
+            android:textColor="@color/gray"
+            android:text="라구식당"
+            app:layout_constraintTop_toBottomOf="@+id/tv_shop_intro_location"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.85" />
+
+        <LinearLayout
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@+id/guideline8"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/btn_detail_shop"
+                android:layout_marginEnd="3dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:paddingVertical="10dp"
+                android:background="@drawable/btn_gray_alpha_solid"
+                android:textSize="@dimen/plain_text"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="가게 둘러보기"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/btn_call"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:paddingVertical="10dp"
+                android:background="@drawable/btn_gray_alpha_stroke"
+                android:textSize="@dimen/plain_text"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="전화걸기"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:paddingVertical="10dp"
+    android:background="@drawable/bottom_boarder"
+    android:id="@+id/container_search_result"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+    <ImageView
+        android:transitionName="img_shop"
+        android:scaleType="fitXY"
+        app:layout_constraintDimensionRatio="1:1.2"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/img_item_shop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/temp_shop"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <TextView
+        android:textSize="15dp"
+        android:id="@+id/tv_shop_name"
+        android:layout_marginStart="15dp"
+        android:textColor="@color/main_gray"
+        android:textStyle="bold"
+        android:text="라구식장dddddddddddddddddddddddddddddddddddddd"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="12dp"
+        android:textColor="#AEAEAE"
+        android:id="@+id/tv_shop_category"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
+        android:text="라구식장"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shop_name"
+        app:layout_constraintStart_toEndOf="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:textSize="13dp"
+        android:id="@+id/tv_shop_location"
+        android:textColor="@color/gray"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
+        android:textStyle="bold"
+        android:text="라구식장"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline5"
+        app:layout_constraintStart_toEndOf="@+id/guideline4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="13dp"
+        android:textColor="@color/gray"
+        android:id="@+id/tv_shop_tel"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
+        android:textStyle="bold"
+        android:text="라구식장"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shop_location"
+        app:layout_constraintStart_toEndOf="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

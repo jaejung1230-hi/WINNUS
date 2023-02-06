@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_marginHorizontal="50dp"
+    android:orientation="vertical"
+    android:weightSum="2"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+
+    <TextView
+        android:id="@+id/btn_goto_gallery"
+        android:clickable="true"
+        android:background="@drawable/bottom_boarder"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="앨범에서 사진 선택하기"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        />
+    <TextView
+        android:id="@+id/btn_delete_profile"
+        android:clickable="true"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="프로필 사진 삭제하기"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        />
+
+</LinearLayout>

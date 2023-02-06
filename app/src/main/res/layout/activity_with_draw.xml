@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraint_update_profile"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <TextView
+        android:id="@+id/tv_nickname_profile"
+        android:textSize="22dp"
+        android:text="회원 탈퇴"
+        android:textStyle="bold"
+        android:textColor="@color/main_black"
+        android:layout_marginStart="@dimen/row_left_margin"
+        app:layout_constraintTop_toBottomOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <TextView
+        android:textStyle="bold"
+        android:textColor="@color/main_gray"
+        android:text="회원 탈퇴 시, 서비스 내 개인정보가 모두 삭제됩니다.\n정말 탈퇴하시겠습니까?"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="@dimen/row_left_margin"
+        app:layout_constraintTop_toBottomOf="@id/guideline10"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4"/>
+
+    <EditText
+        android:textSize="@dimen/plain_text"
+        android:hint="비밀번호"
+        android:paddingVertical="10dp"
+        android:background="@drawable/edit_bottom_boarder"
+        android:id="@+id/edit_pw_for_with_draw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@id/guideline11"
+        android:layout_marginHorizontal="@dimen/row_left_margin"
+        />
+
+    <TextView
+        android:visibility="gone"
+        android:textColor="@color/red_warning"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/row_left_margin"
+        android:layout_marginHorizontal="@dimen/row_left_margin"
+        android:text="비밀번호는 8자리 이상, 대,소문자와 숫자를 포함해야합니다!"
+        app:layout_constraintTop_toBottomOf="@id/edit_pw_for_with_draw"
+        android:id="@+id/tv_password_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <FrameLayout
+        android:id="@+id/frame_spinner_why_with_draw"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="@dimen/row_left_margin"
+        app:layout_constraintTop_toBottomOf="@+id/tv_password_warning"
+        android:background="@drawable/edit_bottom_boarder"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Spinner
+            android:layout_marginStart="-10dp"
+            android:textSize="10dp"
+            android:id="@+id/spinner_why_with_draw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+
+    <Button
+        android:backgroundTint="@color/main_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/row_left_margin"
+        android:layout_marginTop="15dp"
+        android:id="@+id/btn_update_proflie"
+        android:textAlignment="center"
+        android:paddingVertical="10dp"
+        android:textSize="@dimen/plain_text"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="회원 탈퇴하기"
+        app:layout_constraintTop_toBottomOf="@id/frame_spinner_why_with_draw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_main_btm_nav_home"
+        android:icon="@drawable/ic_winnus_home_24"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="홈" />
+
+    <item
+        android:id="@+id/menu_main_btm_nav_search"
+        android:icon="@drawable/ic_winnus_search_24"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="검색" />
+
+    <!--
+    <item
+        android:id="@+id/menu_main_btm_nav_article"
+        android:icon="@drawable/ic_temp_view_list_24"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="아티클" />
+    -->
+    <item
+        android:id="@+id/menu_main_btm_nav_my_page"
+        android:icon="@drawable/ic_winnus_profile_24"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="마이페이지" />
+
+
+</menu>

@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.AppBarLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:background="@color/white"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:contentInsetStart="0dp"
+                >
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView_for_container"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior" >
+
+        <LinearLayout
+            android:weightSum="6"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:padding="5dp"
+                android:layout_marginEnd="1dp"
+                android:id="@+id/btn_sub"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:src="@drawable/ic_winnus_haert_solid_white_24"
+                android:background="@color/main_gray"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/btn_kakao_link"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:text="와인 공유하기"
+                android:textAlignment="center"
+                android:background="@color/main_gray"
+                android:layout_weight="5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+    <com.winnus.winnus.util.NastedStickyScrollView
+        android:id="@+id/nested_sticky_scroll_view"
+        android:layout_width="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        app:layout_constraintDimensionRatio="1:1.2"
+                        android:padding="50dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:background="@color/white"
+                        android:id="@+id/img_detail_wine"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <RelativeLayout
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_detail_wine_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/tv_detail_wine_year"
+                        android:background="@drawable/right_small_border"
+                        android:paddingEnd="20dp"
+                        android:text="와인 지역"
+                        android:textColor="@color/main_gray"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_wine_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="와인 상세 지역"
+                        android:textColor="@color/main_gray"
+                        android:textSize="11dp" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_wine_quality"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tv_detail_wine_year"
+                        android:background="@drawable/left_small_border"
+                        android:paddingStart="22dp"
+                        android:text="와인 상세 지역"
+                        android:textColor="@color/main_gray"
+                        android:textSize="11dp" />
+                </RelativeLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:background="@drawable/bottom_boarder"
+                android:orientation="vertical"
+                android:padding="@dimen/row_left_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_detail_wine_country"
+                        android:textColor="@color/main_gray"
+                        android:layout_marginEnd="5dp"
+                        android:textSize="12dp"
+                        android:text="와인 지역"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_detail_wine_region"
+                        android:background="@drawable/left_small_border"
+                        android:textColor="@color/main_gray"
+                        android:textSize="12dp"
+                        android:paddingStart="7dp"
+                        android:text="와인 상세 지역"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_detail_wine_name"
+                        android:textSize="@dimen/title_text"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="5dp"
+                        android:text="와인명"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_review_count"
+                android:background="@drawable/bottom_boarder"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/row_left_margin"
+                android:paddingVertical="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_detail_wine_rating"
+                        android:gravity="center"
+                        android:drawablePadding="5dp"
+                        android:drawableLeft="@drawable/ic_temp_star_24"
+                        android:textColor="@color/main_gray"
+                        android:layout_marginEnd="10dp"
+                        android:text="0.0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_detail_wine_review_num"
+                        android:gravity="center"
+                        android:drawableRight="@drawable/ic_temp_arrow_forward_ios_15"
+                        android:background="@drawable/left_small_border"
+                        android:textColor="@color/main_gray"
+                        android:paddingStart="12dp"
+                        android:text="와인리뷰 0건 "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:background="@drawable/bottom_boarder"
+                android:gravity="center"
+                android:textAlignment="textStart"
+                android:drawableRight="@drawable/ic_winnus_plus_24"
+                android:textColor="@color/main_gray"
+                android:layout_marginEnd="5dp"
+                android:text="취급 상점 보기"
+                android:paddingHorizontal="@dimen/row_left_margin"
+                android:paddingVertical="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="RtlCompat" />
+
+            <TableLayout
+                android:stretchColumns="*"
+                android:background="@color/main_black"
+                android:paddingHorizontal="@dimen/row_left_margin"
+                android:paddingVertical="15dp"
+                android:rowCount="2"
+                android:columnCount="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TableRow
+                    android:layout_marginBottom="10dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:weightSum="6">
+                        <TextView
+                            android:gravity="center"
+                            android:textAlignment="textStart"
+                            android:layout_weight="1"
+                            android:textColor="@color/white"
+                            android:text="당도"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            tools:ignore="RtlCompat" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_gravity="center"
+                            android:layout_weight="5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_sugar_content_level1"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/card_sugar_content_level2"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_sugar_content_level1"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_sugar_content_level2"
+                                app:cardCornerRadius="15dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_sugar_content_level1"
+                                app:layout_constraintEnd_toStartOf="@id/card_sugar_content_level3"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_sugar_content_level2"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_sugar_content_level3"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_sugar_content_level2"
+                                app:layout_constraintEnd_toStartOf="@id/card_sugar_content_level4"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_sugar_content_level3"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_sugar_content_level4"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_sugar_content_level3"
+                                app:layout_constraintEnd_toStartOf="@id/card_sugar_content_level5"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_sugar_content_level4"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_sugar_content_level5"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_sugar_content_level4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_sugar_content_level5"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:weightSum="6">
+                        <TextView
+                            android:gravity="center"
+                            android:textAlignment="textStart"
+                            android:layout_weight="1.5"
+                            android:textColor="@color/white"
+                            android:text="바디감"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            tools:ignore="RtlCompat" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_gravity="center"
+                            android:layout_weight="4.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_body_level1"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/card_body_level2"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_body_level1"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_body_level2"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_body_level1"
+                                app:layout_constraintEnd_toStartOf="@id/card_body_level3"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_body_level2"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_body_level3"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_body_level2"
+                                app:layout_constraintEnd_toStartOf="@id/card_body_level4"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_body_level3"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_body_level4"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_body_level3"
+                                app:layout_constraintEnd_toStartOf="@id/card_body_level5"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_body_level4"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_body_level5"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_body_level4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_body_level5"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </TableRow>
+                <TableRow>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:weightSum="6">
+                        <TextView
+                            android:gravity="center"
+                            android:textAlignment="textStart"
+                            android:layout_weight="1"
+                            android:textColor="@color/white"
+                            android:text="산도"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            tools:ignore="RtlCompat" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_gravity="center"
+                            android:layout_weight="5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_acidity_level1"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/card_acidity_level2"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_acidity_level1"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_acidity_level2"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_acidity_level1"
+                                app:layout_constraintEnd_toStartOf="@id/card_acidity_level3"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_acidity_level2"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_acidity_level3"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_acidity_level2"
+                                app:layout_constraintEnd_toStartOf="@id/card_acidity_level4"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_acidity_level3"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_acidity_level4"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_acidity_level3"
+                                app:layout_constraintEnd_toStartOf="@id/card_acidity_level5"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_acidity_level4"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_acidity_level5"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_acidity_level4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_acidity_level5"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:weightSum="6">
+                        <TextView
+                            android:gravity="center"
+                            android:textAlignment="textStart"
+                            android:layout_weight="1.5"
+                            android:textColor="@color/white"
+                            android:text="타닌감"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            tools:ignore="RtlCompat" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_gravity="center"
+                            android:layout_weight="4.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_tannin_level1"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/card_tannin_level2"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_tannin_level1"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_tannin_level2"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_tannin_level1"
+                                app:layout_constraintEnd_toStartOf="@id/card_tannin_level3"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_tannin_level2"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_tannin_level3"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_tannin_level2"
+                                app:layout_constraintEnd_toStartOf="@id/card_tannin_level4"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_tannin_level3"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_tannin_level4"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_tannin_level3"
+                                app:layout_constraintEnd_toStartOf="@id/card_tannin_level5"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_tannin_level4"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_tannin_level5"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/card_tannin_level4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp">
+                                <ImageView
+                                    android:id="@+id/img_tannin_level5"
+                                    android:src="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+            <com.google.android.material.tabs.TabLayout
+                android:background="@drawable/bottom_boarder"
+                android:id="@+id/tabs_detail"
+                android:layout_gravity="center"
+                app:tabUnboundedRipple="true"
+                app:tabRippleColor="@null"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabIndicatorHeight="3dp"
+                app:tabIndicatorColor="@color/main_gray"
+                app:tabSelectedTextColor="@color/main_gray"
+                app:tabTextColor="@color/gray"
+                app:tabGravity="fill"
+                app:tabMode="fixed"
+                app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+                >
+                <com.google.android.material.tabs.TabItem
+                    android:text="와인 정보"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <com.google.android.material.tabs.TabItem
+                    android:text="추천음식"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <com.google.android.material.tabs.TabItem
+                    android:text="리뷰"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <com.google.android.material.tabs.TabItem
+                    android:text="관련 와인"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.tabs.TabLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_note"
+                android:background="@drawable/bottom_boarder"
+                android:padding="@dimen/row_left_margin"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="20dp"
+                    android:textSize="@dimen/title_text"
+                    android:textColor="@color/main_black"
+                    android:textStyle="bold"
+                    android:text="테이스팅 노트"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tv_tasting_note"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/main_gray"
+                    android:textStyle="bold"
+                    android:text="한때는 얻지 못했어 원한 걸 계단 앞에서 무너지고 없었어 보람도 굳게 먹었던 마음을 일으켜 다시 한번 꾸겨진 지폐 몇 장이 다였어 쥔 거라곤 차가웠던 이 서울 속 파도 같던 그 설움도 밀려와 또 불만족 난 믿지 않았어 거울도 필요해 우린 큰 감동 다신 뒤로 가지 않고 고개를 위로"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@color/main_black"
+                        android:text="종류"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_detail_wine_type"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/main_gray"
+                        android:paddingStart="7dp"
+                        android:text="와인 상세 지역"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@color/main_black"
+                        android:text="용도"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/main_gray"
+                        android:paddingStart="7dp"
+                        android:text="디저트 와인"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@color/main_black"
+                        android:text="품종"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_detail_wine_variety"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/main_gray"
+                        android:paddingStart="7dp"
+                        android:text="와인 상세 지역"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_aroma"
+                android:background="@drawable/bottom_boarder"
+                android:paddingHorizontal="@dimen/row_left_margin"
+                android:paddingVertical="30dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:textSize="@dimen/title_text"
+                    android:textColor="@color/main_black"
+                    android:textStyle="bold"
+                    android:text="와인 향"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:clipToPadding="false"
+                    android:paddingEnd="@dimen/row_left_margin"
+                    android:overScrollMode="never"
+                    android:id="@+id/recycler_detail_aroma"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="@dimen/title_text"
+                    android:textColor="@color/main_black"
+                    android:textStyle="bold"
+                    android:text="추천 음식"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:clipToPadding="false"
+                    android:paddingEnd="@dimen/row_left_margin"
+                    android:overScrollMode="never"
+                    android:id="@+id/recycler_detail_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_review"
+                android:background="@drawable/bottom_gray_boarder"
+                android:orientation="vertical"
+                android:padding="@dimen/row_left_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:textSize="@dimen/title_text"
+                    android:textColor="@color/main_black"
+                    android:textStyle="bold"
+                    android:text="리뷰"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/main_black"
+                    android:textStyle="bold"
+                    android:text="와인 만족도"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RatingBar
+                        android:id="@+id/rating_detail_review"
+                        android:layout_gravity="center"
+                        android:theme="@style/RatingBar"
+                        android:numStars="5"
+                        android:rating="4.5"
+                        android:stepSize="0.5"
+                        android:isIndicator="true"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_detail_wine_rating_small"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold"
+                        android:text="4.5"
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:textColor="@color/main_gray"
+                        android:text=" / 5.0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:background="#F3F3F3"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="@dimen/row_left_margin"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textStyle="bold"
+                    android:onClick="sortReview"
+                    android:id="@+id/tv_sort_review_new"
+                    android:textColor="@color/main_gray"
+                    android:layout_marginEnd="5dp"
+                    android:text="최신순"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:onClick="sortReview"
+                    android:id="@+id/tv_sort_review_low"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/left_gray_small_border"
+                    android:textColor="@color/main_gray"
+                    android:paddingStart="7dp"
+                    android:text="평점 낮은 순"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:onClick="sortReview"
+                    android:id="@+id/tv_sort_review_high"
+                    android:background="@drawable/left_gray_small_border"
+                    android:textColor="@color/main_gray"
+                    android:paddingStart="7dp"
+                    android:text="평점 높은 순"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:background="#F3F3F3"
+                android:id="@+id/recycler_detail_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/btn_all_reviews"
+                android:layout_margin="@dimen/row_left_margin"
+                android:background="@drawable/edit_box"
+                android:paddingVertical="12dp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/plain_text"
+                android:text="리뷰 전체 보기"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_kind_wine_best"
+                android:layout_marginStart="@dimen/row_left_margin"
+                android:layout_marginBottom="10dp"
+                android:text="레드 와인 BEST"
+                android:textStyle="bold"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:clipToPadding="false"
+                android:paddingEnd="@dimen/row_left_margin"
+                android:overScrollMode="never"
+                android:background="@color/white"
+                android:id="@+id/recycler_best_wine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginStart="@dimen/row_left_margin"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="@dimen/row_left_margin"
+                android:text="비슷한 와인"
+                android:textStyle="bold"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:clipToPadding="false"
+                android:paddingEnd="@dimen/row_left_margin"
+                android:overScrollMode="never"
+                android:paddingBottom="60dp"
+                android:background="@color/white"
+                android:id="@+id/recycler_similar_wine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </com.winnus.winnus.util.NastedStickyScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

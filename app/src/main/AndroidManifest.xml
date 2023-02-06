@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.winnus.winnus">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:name="com.winnus.winnus.config.ApplicationClass"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_winnus_main"
+        android:label="위누스"
+        android:roundIcon="@mipmap/ic_winnus_main_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WINNUS">
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+
+        <activity
+            android:name=".src.gallery.GalleryActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".src.simple.IntroduceActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".src.simple.AgreeActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".src.simple.NoticeActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".src.simple.VocActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".src.withDraw.WithDrawActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".src.UpdateProfile.UpdateProfileActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".src.myReview.MyReviewActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".src.ReWriteReview.ReWriteReviewActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".src.bookMarkWine.SubscribesWinesActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".src.main.MainActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/kakao_scheme"
+                    android:host="@string/kakaolink_host" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".src.shopResult.ShopResultActivity"
+            android:exported="true"/>
+        <activity
+            android:noHistory="true"
+            android:name=".src.shopIntro.ShopIntroActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".src.searchResult.SearchResultActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".src.writeReview.WriteReviewActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".src.allReview.AllReviewActivity"
+            android:exported="true"/>
+
+        <activity
+            android:noHistory="true"
+            android:name=".src.filter.FilterActivity"
+            android:exported="true"/>
+
+        <activity
+            android:noHistory="true"
+            android:name=".src.filter.SubFilterActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".src.signup.SignUpActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".src.ShopDetail.DetailShopActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".src.WineDetail.DetailWineActivity"
+            android:exported="true"/>
+
+        <activity
+            android:noHistory="true"
+            android:name=".src.splash.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".src.login.LoginActivity"
+            android:exported="true"/>
+    </application>
+
+</manifest>

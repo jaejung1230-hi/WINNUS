@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_marginHorizontal="20dp"
+    android:orientation="vertical"
+    android:weightSum="3"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp">
+
+
+    <TextView
+        android:clickable="true"
+        android:background="@drawable/bottom_boarder"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="해당 리뷰를 신고하시겠습니까?"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        />
+
+
+    <Spinner
+        android:layout_weight="1"
+        android:textSize="10dp"
+        android:background="@drawable/bottom_boarder"
+        android:id="@+id/spinner_why_report"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <LinearLayout
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <TextView
+            android:id="@+id/btn_report_yes"
+            android:clickable="true"
+            android:background="@drawable/bottom_boarder"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="예"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <TextView
+            android:id="@+id/btn_report_no"
+            android:clickable="true"
+            android:background="@drawable/bottom_boarder"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="아니오"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

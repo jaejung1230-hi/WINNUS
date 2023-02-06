@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:id="@+id/home_swiperefreshlayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView
+        android:overScrollMode="never"
+        android:id="@+id/home_nestedscrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager_brand_story_big"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="430dp"/>
+
+            <TextView
+                android:layout_marginTop="55dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/tv_title_popular_wine"
+                android:text="실시간 인기 와인"
+                android:textStyle="bold"
+                android:textColor="@color/main_black"
+                app:layout_constraintTop_toBottomOf="@+id/viewpager_brand_story_big"
+                android:textSize="@dimen/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.tabs.TabLayout
+                app:tabPaddingBottom="-15dp"
+                app:tabIndicatorHeight="0dp"
+                app:tabIndicatorColor="@color/main_black"
+                app:tabIndicatorFullWidth="false"
+                app:tabSelectedTextColor="@color/main_black"
+                app:tabTextColor="#88333333"
+                app:tabUnboundedRipple="true"
+                app:tabMode="fixed"
+                style="@style/SingleLineTabLayout"
+                app:tabRippleColor="@null"
+                android:layout_marginHorizontal="@dimen/row_left_margin"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_popular_wine"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/tab_popular_wine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <FrameLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="@dimen/row_left_margin"
+                app:layout_constraintTop_toBottomOf="@+id/tab_popular_wine"
+                android:id="@+id/frm_popular_wine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/tv_title_today_wine"
+                android:text="오늘의 와인"
+                android:textStyle="bold"
+                android:textColor="@color/main_black"
+                app:layout_constraintTop_toBottomOf="@+id/frm_popular_wine"
+                android:textSize="@dimen/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:clipToPadding="false"
+                android:paddingEnd="@dimen/row_left_margin"
+                android:overScrollMode="never"
+                android:layout_marginTop="30dp"
+                android:id="@+id/recycler_today_wine"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_today_wine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/tv_title_brand_story"
+                android:text="브랜드 스토리"
+                android:textStyle="bold"
+                android:textColor="@color/main_black"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_today_wine"
+                android:textSize="@dimen/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_marginTop="30dp"
+                android:id="@+id/viewpager_brand_story"
+                app:layout_constraintDimensionRatio="1:0.4"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_brand_story"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+
+            <TextView
+                android:layout_marginTop="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/tv_title_theme_wine"
+                android:text="테마별 #와인"
+                android:textStyle="bold"
+                android:textColor="@color/main_black"
+                app:layout_constraintTop_toBottomOf="@+id/viewpager_brand_story"
+                android:textSize="@dimen/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.tabs.TabLayout
+                app:tabPaddingBottom="-15dp"
+                app:tabIndicatorHeight="0dp"
+                app:tabTextColor="#88333333"
+                app:tabIndicatorColor="@color/main_black"
+                app:tabIndicatorFullWidth="false"
+                app:tabSelectedTextColor="@color/main_black"
+                app:tabUnboundedRipple="true"
+                app:tabMode="fixed"
+                style="@style/SingleLineTabLayout"
+                app:tabRippleColor="@null"
+                android:layout_marginHorizontal="@dimen/row_left_margin"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_theme_wine"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/tab_theme_wine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:overScrollMode="never"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="@dimen/row_left_margin"
+                app:layout_constraintTop_toBottomOf="@+id/tab_theme_wine"
+                android:id="@+id/frm_theme_wine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

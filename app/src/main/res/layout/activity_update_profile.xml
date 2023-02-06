@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraint_update_profile"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <TextView
+        android:id="@+id/tv_nickname_profile"
+        android:textSize="22dp"
+        android:text="프로필 수정"
+        android:textStyle="bold"
+        android:textColor="@color/main_black"
+        android:layout_marginStart="@dimen/row_left_margin"
+        app:layout_constraintTop_toBottomOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="프로필 사진 변경"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="@dimen/row_left_margin"
+        app:layout_constraintTop_toBottomOf="@id/tv_nickname_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.card.MaterialCardView
+        app:strokeColor="@color/main_gray"
+        app:strokeWidth="1.5dp"
+        android:layout_marginEnd="@dimen/row_left_margin"
+        app:layout_constraintTop_toBottomOf="@id/guideline9"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/card_1"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        app:cardCornerRadius="70dp"
+        app:cardElevation="0dp">
+        <ImageView
+            android:scaleType="centerCrop"
+            android:id="@+id/img_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/soft_gray"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <EditText
+        android:textSize="@dimen/plain_text"
+        android:hint="사용자 이름 또는 별명"
+        android:paddingVertical="10dp"
+        android:background="@drawable/edit_bottom_boarder"
+        android:id="@+id/edit_nick_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        app:layout_constraintTop_toBottomOf="@id/guideline10"
+        android:layout_marginHorizontal="@dimen/row_left_margin"
+        />
+
+    <TextView
+        android:visibility="gone"
+        android:textColor="@color/red_warning"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/row_left_margin"
+        android:layout_marginHorizontal="@dimen/row_left_margin"
+        android:text="닉네임을 입력해주세요!"
+        app:layout_constraintTop_toBottomOf="@id/edit_nick_name"
+        android:id="@+id/tv_nickname_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:textSize="@dimen/plain_text"
+        android:hint="기존 비밀번호"
+        android:paddingVertical="10dp"
+        android:background="@drawable/edit_bottom_boarder"
+        android:id="@+id/edit_old_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@id/tv_nickname_warning"
+        android:layout_marginHorizontal="@dimen/row_left_margin"
+        />
+
+    <TextView
+        android:visibility="gone"
+        android:textColor="@color/red_warning"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/row_left_margin"
+        android:layout_marginHorizontal="@dimen/row_left_margin"
+        android:text="비밀번호는 8자리 이상, 대,소문자와 숫자를 포함해야합니다!"
+        app:layout_constraintTop_toBottomOf="@id/edit_old_password"
+        android:id="@+id/tv_old_password_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:textSize="@dimen/plain_text"
+        android:hint="신규 비밀번호"
+        android:paddingVertical="10dp"
+        android:background="@drawable/edit_bottom_boarder"
+        android:id="@+id/edit_new_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@id/tv_old_password_warning"
+        android:layout_marginHorizontal="@dimen/row_left_margin"
+        />
+
+    <TextView
+        android:visibility="gone"
+        android:textColor="@color/red_warning"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/row_left_margin"
+        android:layout_marginHorizontal="@dimen/row_left_margin"
+        android:text="비밀번호는 8자리 이상, 대,소문자와 숫자를 포함해야합니다!"
+        app:layout_constraintTop_toBottomOf="@id/edit_new_password"
+        android:id="@+id/tv_new_password_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:backgroundTint="@color/main_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/row_left_margin"
+        android:layout_marginTop="15dp"
+        android:id="@+id/btn_update_proflie"
+        android:textAlignment="center"
+        android:paddingVertical="10dp"
+        android:textSize="@dimen/plain_text"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="회원 정보 저장하기"
+        app:layout_constraintTop_toBottomOf="@id/tv_new_password_warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_update_proflie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="회원 정보를 삭제하시겠어요? "
+            android:textSize="@dimen/plain_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_go_withdraw"
+            android:text="회원탈퇴"
+            android:textSize="@dimen/plain_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
